@@ -3,18 +3,20 @@
 	import Field from '$lib/components/Field.svelte';
 	import { text } from '@sveltejs/kit';
 	import type { ItemData } from '../lib/types';
-	let items: Array<ItemData> = [
-		{
-			id: 1,
-			text: 'Some ToDo',
-			isDone: false
-		},
-		{
-			id: 2,
-			text: 'Some ToDo',
-			isDone: true
-		}
-	];
+	export let data;
+	let items = data.items;
+	// let items: ItemData[] = [
+	// 	{
+	// 		id: 1,
+	// 		text: 'Some ToDo',
+	// 		isDone: false
+	// 	},
+	// 	{
+	// 		id: 2,
+	// 		text: 'Some ToDo',
+	// 		isDone: true
+	// 	}
+	// ];
 
 	function onAdd(event: CustomEvent) {
 		console.log(event.detail);
